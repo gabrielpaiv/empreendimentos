@@ -9,11 +9,14 @@ export default function Home() {
         <title>Empreendi Mentos</title>
       </Head>
       <Header action={() => console.log('oie')} />
-      <h1>Hello World</h1>
-      <Enterprise />
-      <Enterprise />
-      <Enterprise />
-      <Enterprise />
+      <h1>Buscar</h1>
+      <Enterprise
+        title="Villega Vila Velha"
+        address="Rua Dório Silva, 100 - Vila Guaranhuns, Vila Velha"
+        tags={['Lançamento', 'Residencial']}
+        edit={() => console.log('Editando...')}
+        remove={() => console.log('Removendo...')}
+      />
     </>
   )
 }

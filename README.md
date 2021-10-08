@@ -40,6 +40,7 @@
 - React
 - Next.js
 - Styled Components
+- React Icons
 - Axios
 - Json-server
 

@@ -7,4 +7,5 @@ export const ActionButton = styled.button`
   border-radius: 4.5rem;
   font-size: 1rem;
   font-weight: 700;
+  border: none;
 `
