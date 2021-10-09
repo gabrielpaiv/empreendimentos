@@ -1,48 +1,31 @@
 {
   "enterprises": [
     {
-      "_id": "PA01",
-      "name": "Sirius Vila Bastos",
-      "status": "RELEASE",
-      "purpose": "HOME",
-      "ri_number": "123321",
+      "id": "1633803351076",
+      "name": "Jureg construções",
+      "purpose": "Comercial",
+      "status": "Lançamento",
       "address": {
-        "district": "Vila Bastos",
-        "city": "Santo André",
-        "street": "Rua Doutor Messuti",
-        "state": "SP",
-        "number": "339",
-        "cep": "60000000"
+        "cep": "70745-010",
+        "city": "Brasília",
+        "street": "SQN 306 Bloco A",
+        "district": "Asa Norte",
+        "number": "303",
+        "state": "DF"
       }
     },
     {
-      "_id": "PA02",
-      "name": "Moriah Ipiranga",
-      "status": "RELEASE",
-      "purpose": "HOME",
-      "ri_number": "321123",
+      "id": "1633803455092",
+      "name": "What",
+      "purpose": "Residencial",
+      "status": "Breve lançamento",
       "address": {
-        "street": "Rua Lucinda Ferreira",
-        "number": "173",
-        "district": "Ipiranga",
+        "cep": "03207-020",
         "city": "São Paulo",
-        "state": "SP",
-        "cep": "60000000"
-      }
-    },
-    {
-      "_id": "PA03",
-      "name": "Sirius Campinas",
-      "status": "RELEASE",
-      "purpose": "HOME",
-      "ri_number": "987654",
-      "address": {
-        "street": "Av. Aquidabã",
-        "number": "280",
-        "district": "Zona Heteleira Aquidabã",
-        "city": "Campinas",
-        "state": "SP",
-        "cep": "60000000"
+        "street": "Rua Francisco dos Santos",
+        "district": "Vila Alpina",
+        "number": "303",
+        "state": "SP"
       }
     }
   ]

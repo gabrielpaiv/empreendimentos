@@ -7,11 +7,25 @@ export type Address = {
   cep: string
 }
 
-export type Enterprise = {
-  _id: string
+export type EnterpriseType = {
+  id: string
   name: string
   status: string
   purpose: string
-  ri_number: string
+  ri_number?: string
   address: Address
+}
+
+export type ViacepResponse = {
+  cep: string
+  logradouro: string
+  complemento: string
+  bairro: string
+  localidade: string
+  uf: string
+  ibge: string
+  gia: string
+  ddd: string
+  siafi: string
+  erro?: boolean
 }
