@@ -14,7 +14,6 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
   const [status, setStatus] = useState('Lançamento')
   const [purpose, setPurpose] = useState('Residencial')
   const [name, setName] = useState('')
-  const [CEP, setCEP] = useState('')
   const [address, setAddress] = useState<ViacepResponse>({} as ViacepResponse)
   const [number, setNumber] = useState('')
 
@@ -53,6 +52,11 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
     }
     await api.post('enterprises', newEnterprise).catch(err => console.log(err))
     onRequestClose()
+    setStatus('Lançamento')
+    setPurpose('Residencial')
+    setName('')
+    setAddress({} as ViacepResponse)
+    setNumber('')
   }
 
   return (

@@ -16,11 +16,11 @@
 
 - [ ] Rodar na web
 - [x] Utilizar Typescript
-- [ ] Listar Empreendimentos
-- [ ] Criar Empreendimento
+- [x] Listar Empreendimentos
+- [x] Criar Empreendimento
 - [ ] Editar Empreendimento
 - [ ] Deletar Empreendimento
-- [ ] Styled-components para construção do layout
+- [x] Styled-components para construção do layout
 - [ ] Responsivo
 - [x] Subir no github, ou bitbucket e afins..
 
@@ -28,10 +28,10 @@
 
 ## ⭐ Extras
 
-- [ ] Utilizar o getServerSideProps
+- [x] Utilizar o getServerSideProps
 - [x] Utilizar o axios
-- [ ] Filtrar pelo nome do empreendimento.
-- [ ] Paginação.
+- [x] Filtrar pelo nome do empreendimento.
+- [x] Paginação.
 
 &nbsp;
 
