@@ -12,6 +12,10 @@
 
 &nbsp;
 
+<img src="https://github.com/gabrielpaiv/gabrielpaiv/blob/main/.github/images/Projects/Empreendimentos-example.jpg?raw=true" alt="Empreendi Mentos Inicio"/>
+
+&nbsp;
+
 ## 🏁 Objetivos
 
 - [x] Rodar na web
