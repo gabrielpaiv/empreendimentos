@@ -19,13 +19,13 @@ export type EnterpriseType = {
 export type ViacepResponse = {
   cep: string
   logradouro: string
-  complemento: string
+  complemento?: string
   bairro: string
   localidade: string
   uf: string
-  ibge: string
-  gia: string
-  ddd: string
-  siafi: string
+  ibge?: string
+  gia?: string
+  ddd?: string
+  siafi?: string
   erro?: boolean
 }

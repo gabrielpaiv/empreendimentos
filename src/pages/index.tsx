@@ -10,11 +10,14 @@ import { EnterpriseType } from '../types/enterprise'
 interface HomeProps {
   data: EnterpriseType[]
   after?: boolean
+  page: number
 }
 
-export default function Home({ data, after }: HomeProps) {
+export default function Home({ data, after, page }: HomeProps) {
   const [enterprises, setEnterprises] = useState(data)
   const [addModalOpen, setAddModalOpen] = useState(false)
+  const [nextPage, setNextPage] = useState(page + 1)
+  const [showButton, setShowButton] = useState(after)
 
   async function updateRequest() {
     const update = await api.get<EnterpriseType[]>(
@@ -23,7 +26,19 @@ export default function Home({ data, after }: HomeProps) {
     setEnterprises(update.data)
   }
 
-  async function loadMore() {}
+  async function loadMore() {
+    const load = await api
+      .get<EnterpriseType[]>(
+        `enterprises?_start=${10 * nextPage}&_end=${
+          nextPage * 10 + 10
+        }&_sort=id&_order=desc`
+      )
+      .then(response => response.data)
+    setNextPage(nextPage + 1)
+
+    setShowButton(load.length === 10)
+    setEnterprises([...enterprises, ...load])
+  }
 
   async function onSearch(search: string, event: Event) {
     event.preventDefault()
@@ -39,7 +54,8 @@ export default function Home({ data, after }: HomeProps) {
       .catch(err => console.log(err))
 
     const index = enterprises.findIndex(item => item.id === id)
-    const updated = enterprises.splice(index, 1)
+    const updated = [...enterprises]
+    updated.splice(index, 1)
     setEnterprises(updated)
   }
 
@@ -50,10 +66,10 @@ export default function Home({ data, after }: HomeProps) {
       </Head>
       <Header action={() => setAddModalOpen(true)} />
       <Dashboard
-        after={after}
+        after={showButton}
         data={enterprises}
         onSearch={onSearch}
-        onLoadMore={() => loadMore}
+        onLoadMore={() => loadMore()}
         onRemove={onRemove}
       />
       <AddModal
@@ -79,7 +95,8 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   return {
     props: {
       data: response,
-      after
+      after,
+      page: 0
     }
   }
 }

@@ -1,31 +1,171 @@
 {
   "enterprises": [
     {
-      "id": "1633803351076",
-      "name": "Jureg construções",
+      "id": "1633816928718",
+      "name": "Vendinha da SQN 306 bloco A",
       "purpose": "Comercial",
-      "status": "Lançamento",
+      "status": "Em Obras",
       "address": {
         "cep": "70745-010",
         "city": "Brasília",
         "street": "SQN 306 Bloco A",
         "district": "Asa Norte",
-        "number": "303",
+        "number": "Térreo",
         "state": "DF"
       }
     },
     {
-      "id": "1633803455092",
-      "name": "What",
-      "purpose": "Residencial",
-      "status": "Breve lançamento",
+      "id": "1633816968743",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
       "address": {
-        "cep": "03207-020",
-        "city": "São Paulo",
-        "street": "Rua Francisco dos Santos",
-        "district": "Vila Alpina",
-        "number": "303",
-        "state": "SP"
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633817020118",
+      "name": "Loja de bonecas Beneviento",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70745-000",
+        "city": "Brasília",
+        "street": "SQN 306",
+        "district": "Asa Norte",
+        "number": "103",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877353568",
+      "name": "Apartamento residencial da 308",
+      "purpose": "Residencial",
+      "status": "Pronto pra morar",
+      "address": {
+        "cep": "70747-010",
+        "city": "Brasília",
+        "street": "SQN 308 Bloco A",
+        "district": "Asa Norte",
+        "number": "104",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877379792",
+      "name": "Apartamento residencial da 307",
+      "purpose": "Residencial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "108",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438024",
+      "name": "Empreendimento do Seu Zé",
+      "purpose": "Residencial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70304-000",
+        "city": "Brasília",
+        "street": "SCS Quadra 4",
+        "district": "Asa Sul",
+        "number": "101",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438025",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438026",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438027",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438028",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438029",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
+      }
+    },
+    {
+      "id": "1633877438031",
+      "name": "Salão de beleza da Dona Benta",
+      "purpose": "Comercial",
+      "status": "Lançamento",
+      "address": {
+        "cep": "70746-010",
+        "city": "Brasília",
+        "street": "SQN 307 Bloco A",
+        "district": "Asa Norte",
+        "number": "Térreo",
+        "state": "DF"
       }
     }
   ]

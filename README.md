@@ -14,14 +14,14 @@
 
 ## 🏁 Objetivos
 
-- [ ] Rodar na web
+- [x] Rodar na web
 - [x] Utilizar Typescript
 - [x] Listar Empreendimentos
 - [x] Criar Empreendimento
-- [ ] Editar Empreendimento
-- [ ] Deletar Empreendimento
+- [x] Editar Empreendimento
+- [x] Deletar Empreendimento
 - [x] Styled-components para construção do layout
-- [ ] Responsivo
+- [x] Responsivo
 - [x] Subir no github, ou bitbucket e afins..
 
 &nbsp;
@@ -41,6 +41,7 @@
 - Next.js
 - Styled Components
 - React Icons
+- React Modal
 - Axios
 - Json-server
 

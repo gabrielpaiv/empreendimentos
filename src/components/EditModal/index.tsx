@@ -1,21 +1,48 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import { api, viacep } from '../../services/api'
 import { EnterpriseType, ViacepResponse } from '../../types/enterprise'
 import { Button } from '../Button'
-import { ButtonWrapper, Info, Input, Selection, Title } from './styles'
+import {
+  ButtonWrapper,
+  Info,
+  Input,
+  Selection,
+  Title
+} from '../AddModal/styles'
 
 interface AddModalProps {
   isOpen: boolean
   onRequestClose: () => void
+  data: EnterpriseType
 }
 
-export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
-  const [status, setStatus] = useState('Lançamento')
-  const [purpose, setPurpose] = useState('Residencial')
-  const [name, setName] = useState('')
-  const [address, setAddress] = useState<ViacepResponse>({} as ViacepResponse)
-  const [number, setNumber] = useState('')
+export function EditModal({ isOpen, onRequestClose, data }: AddModalProps) {
+  const [status, setStatus] = useState(data.status)
+  const [purpose, setPurpose] = useState(data.purpose)
+  const [name, setName] = useState(data.name)
+  const [address, setAddress] = useState<ViacepResponse>({
+    bairro: data.address?.district,
+    cep: data.address?.cep,
+    localidade: data.address?.street,
+    logradouro: data.address?.city,
+    uf: data.address?.state
+  })
+  const [number, setNumber] = useState(data.address?.number)
+
+  useEffect(() => {
+    setStatus(data.status)
+    setPurpose(data.purpose)
+    setName(data.name)
+    setAddress({
+      bairro: data.address.district,
+      cep: data.address.cep,
+      localidade: data.address.street,
+      logradouro: data.address.city,
+      uf: data.address.state
+    })
+    setNumber(data.address.number)
+  }, [data])
 
   async function handleCEPChange(cep: string) {
     const cepR = cep.replace(/[^0-9]/g, '')
@@ -35,7 +62,7 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
   }
 
   async function handleSubmit() {
-    const newEnterprise: EnterpriseType = {
+    const updatedEnterprise: EnterpriseType = {
       id: String(new Date().getTime()),
       name,
       purpose,
@@ -49,13 +76,10 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
         state: address.uf
       }
     }
-    await api.post('enterprises', newEnterprise).catch(err => console.log(err))
+    await api
+      .put(`enterprises/${data.id}`, updatedEnterprise)
+      .catch(err => console.log(err))
     onRequestClose()
-    setStatus('Lançamento')
-    setPurpose('Residencial')
-    setName('')
-    setAddress({} as ViacepResponse)
-    setNumber('')
   }
 
   return (
@@ -75,6 +99,7 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
 
       <Input
         placeholder="Nome do empreendimento"
+        value={name}
         onChange={e => setName(e.target.value)}
       />
 
@@ -86,6 +111,7 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
       <Input
         placeholder="CEP"
         type="text"
+        value={data.address.cep}
         pattern="^\d{5}-\d{3}$"
         onBlur={e => handleCEPChange(e.target.value)}
       />
@@ -103,11 +129,12 @@ export function AddModal({ isOpen, onRequestClose }: AddModalProps) {
       <Input
         type="text"
         placeholder="Número"
+        value={number}
         onChange={e => setNumber(e.target.value)}
       />
 
       <ButtonWrapper>
-        <Button title="Cadastrar" action={handleSubmit} />
+        <Button title="Editar" action={handleSubmit} />
       </ButtonWrapper>
     </Modal>
   )

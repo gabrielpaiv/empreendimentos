@@ -3,6 +3,7 @@ import { BiSearch } from 'react-icons/bi'
 import { EnterpriseType } from '../../types/enterprise'
 import { formatAddress } from '../../utils/address'
 import { Button } from '../Button'
+import { EditModal } from '../EditModal'
 import { Enterprise } from '../Enterprise'
 import { Container, SearchInput } from './styles'
 import { ButtonWrapper, Search } from './styles'
@@ -23,31 +24,49 @@ export function Dashboard({
   onRemove
 }: DashboardProps) {
   const [search, setSearch] = useState('')
-  return (
-    <Container>
-      <Search onSubmit={() => onSearch(search, event)}>
-        <BiSearch size={20} />
-        <SearchInput
-          placeholder="Buscar"
-          onChange={e => setSearch(e.target.value)}
-        />
-      </Search>
+  const [editModalOpen, setEditModalOpen] = useState(false)
+  const [selected, setSelected] = useState({} as EnterpriseType)
 
-      {data.map(item => (
-        <Enterprise
-          key={item.id}
-          title={item.name}
-          address={formatAddress(item.address)}
-          tags={[item.status, item.purpose]}
-          edit={() => console.log(item)}
-          remove={() => onRemove(item.id)}
+  return (
+    <>
+      <Container>
+        <Search onSubmit={() => onSearch(search, event)}>
+          <BiSearch size={20} />
+          <SearchInput
+            placeholder="Buscar"
+            onChange={e => setSearch(e.target.value)}
+          />
+        </Search>
+
+        {data.map(item => (
+          <Enterprise
+            key={item.id}
+            title={item.name}
+            address={formatAddress(item.address)}
+            tags={[item.status, item.purpose]}
+            edit={() => {
+              setSelected(item)
+              setEditModalOpen(true)
+            }}
+            remove={() => onRemove(item.id)}
+          />
+        ))}
+        {after && (
+          <ButtonWrapper>
+            <Button title="Carregar mais..." action={onLoadMore} />
+          </ButtonWrapper>
+        )}
+      </Container>
+
+      {editModalOpen && (
+        <EditModal
+          isOpen={editModalOpen}
+          data={selected}
+          onRequestClose={() => {
+            setEditModalOpen(false)
+          }}
         />
-      ))}
-      {after && (
-        <ButtonWrapper>
-          <Button title="Carregar mais..." action={onLoadMore} />
-        </ButtonWrapper>
       )}
-    </Container>
+    </>
   )
 }
