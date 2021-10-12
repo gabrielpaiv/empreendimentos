@@ -43,6 +43,7 @@
 
 - React
 - Next.js
+- Typescript
 - Styled Components
 - React Icons
 - React Modal
